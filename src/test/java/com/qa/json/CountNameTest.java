@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.qa.app.Account;
@@ -13,26 +14,21 @@ import junit.framework.Assert;
 
 public class CountNameTest {
 
+	Account a;
 	
+	@Before
+	public void init()
+	{
+		a = new Account("Kennedy","Bowers",20008);
+	}
 	
 	@Test
 	public void testNames() 
 	{
 		Service s = Service.getInstance();
-		s.addToMap(new Account("Kennedy","Bowers",20008));
+		s.addToMap(a);
 		int number = s.findAmountOfName("Kennedy");
-		Assert.assertEquals(1, number);
+		Assert.assertEquals("Not 1", 1, number);
+		System.out.println(number);
 	}
-	@Test
-	public void testAccounts()
-	{
-		Service s = Service.getInstance();
-		s.addToMap(new Account("Kennedy","Bowers",20008));
-		ArrayList<Account> expected = new ArrayList<Account>();
-		expected.add(new Account("Kennedy","Bowers",20008));
-		ArrayList<Account> list = s.findAccountsOfName("Kennedy");
-		//Assert.assertEquals(1, number);
-		Assert.assertEquals(expected, list);
-	}
-
 }

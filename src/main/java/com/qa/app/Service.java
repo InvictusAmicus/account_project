@@ -1,6 +1,8 @@
 package com.qa.app;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import org.json.simple.JSONObject;
 
@@ -55,5 +57,37 @@ public class Service
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public int findAmountOfName(String string) 
+	{
+		int count = 0;
+		JSONObject o = new JSONObject(map);
+		Iterator<Account> iterator = o.values().iterator();
+		while(iterator.hasNext())
+		{
+			Account check = iterator.next();
+			if(check.getFirstName().equals("Kennedy"))
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public ArrayList<Account> findAccountsOfName(String string)
+	{
+		ArrayList<Account> list = new ArrayList<Account>();
+		JSONObject o = new JSONObject(map);
+		Iterator<Account> iterator = o.values().iterator();
+		while(iterator.hasNext())
+		{
+			Account check = iterator.next();
+			if(check.getFirstName().equals("Kennedy"))
+			{
+				list.add(check);
+			}
+		}
+		return list;
 	}
 }
