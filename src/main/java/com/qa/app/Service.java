@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Service 
 {
-	private static int count = 0;
+	private int count = 0;
 	private static Service instance;
 	private HashMap<Integer, Account> map;
 	
@@ -22,10 +22,10 @@ public class Service
 		return instance;
 	}
 	
-	public void addToMap(Account a)
+	public void addToMap(Account account)
 	{
 		count++;
-		map.put(count, a);
+		map.put(count, account);
 	}
 	
 	public boolean doesExist(int accno)

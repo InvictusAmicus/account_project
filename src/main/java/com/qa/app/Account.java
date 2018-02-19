@@ -29,4 +29,10 @@ public class Account
 		return accNo;
 	}
 	
+	public String toString()
+	{
+		return firstName + " " + lastName;
+		
+	}
+	
 }
