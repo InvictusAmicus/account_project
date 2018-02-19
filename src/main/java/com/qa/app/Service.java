@@ -1,6 +1,11 @@
 package com.qa.app;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.HashMap;
+
+import org.json.simple.JSONObject;
 
 public class Service 
 {
@@ -36,6 +41,25 @@ public class Service
 	public Account getFromMap(int accNo)
 	{
 			return map.get(accNo);
+	}
+	
+	public void printAsJson()
+	{
+		/*JSONObject o = */
+		try
+		{
+			JSONObject o = new JSONObject(map);
+			String message = o.toJSONString();
+			System.out.println(message);
+			System.out.println(o);
+			
+
+		} 
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

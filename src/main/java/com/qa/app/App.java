@@ -10,9 +10,11 @@ public class App
 		service.addToMap(new Account("Tony", "Shannon", 2));
 		
 		int accNo = 1;
-		printAcc(accNo);
+	//	printAcc(accNo);
 		accNo = 3;
-		printAcc(accNo);
+	//	printAcc(accNo);
+		
+		service.printAsJson();
 		
 	}
 
