@@ -1,8 +1,5 @@
 package com.qa.app;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.HashMap;
 
 import org.json.simple.JSONObject;
@@ -52,8 +49,6 @@ public class Service
 			String message = o.toJSONString();
 			System.out.println(message);
 			System.out.println(o);
-			
-
 		} 
 		catch (Exception e) 
 		{
@@ -61,5 +56,4 @@ public class Service
 			e.printStackTrace();
 		}
 	}
-
 }
